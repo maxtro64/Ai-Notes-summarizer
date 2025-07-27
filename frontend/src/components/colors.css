@@ -1,0 +1,24 @@
+/* index.css or app.css */
+:root {
+  --primary-color: #0E2E2E;
+  --accent-color: #1E4D4D;
+  --text-main: #F1F5F9;
+  --text-secondary: #A0B6B6;
+  --button-color: #00C2A8;
+  --button-hover-color: #00A490;
+  --highlight-color: #7FFFD4;
+  --border-line-color: #2D4E4E;
+  --danger-color: #FF6B6B;
+}
+
+
+/* 
+
+Role	Color Code	Use in UI
+Primary	#0E2E2E	Background, Navbar, Hero Section
+Accent / CTA	#00C6A7	Buttons, Highlights, Icons
+Secondary	#1F4E4E	Cards, Secondary Backgrounds
+Text Light	#F5F7FA	Headings on dark background
+Text Muted	#A7B8B8	Paragraphs, subtext
+Border / Hover	#007F6A	Button hover, input borders
+Error	#FF5E5E	Error text, invalid input fields */
