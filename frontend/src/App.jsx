@@ -3,9 +3,13 @@ import Navbar from './components/Navbar'
 import './index.css'
 // import Home from './components/Home'
 import Chatbot from './components/Chatbot'
+import LoginPage from './components/Login'
 
 function App() {
- 
+  const [user, setUser] = useState(null);
+ if (!user) {
+    return <LoginPage onLogin={setUser} />;
+  }
 
   return (
     <>
