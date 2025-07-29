@@ -9,26 +9,34 @@ import authRoutes from './routes/authRoutes.js';
 import notesRoutes from './routes/notesRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
 
+// Initialize express app FIRST
+const app = express();
+
+// Connect to database
 connect();
-app.use(cors())
-app.use(express.json())
-app.use(helmet())
-app.use(morgan('dev'))
+
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
+
+
+app.use(express.json());
+app.use(helmet());
+app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/notes', notesRoutes);
 
-app.use('/api/auth',authRoutes)
-app.use('/api/notes',notesRoutes)
-
+// Error handler
 app.use(errorHandler);
 
-const app=express()
-const PORT=3000
+const PORT =  process.env.PORT ;
 
+app.listen(PORT, () => {
 
-
-
-
-app.listen(PORT,()=>{
-    console.log("App Started")
-})
+  console.log(`Server running on port ${PORT}`);
+});
