@@ -84,13 +84,13 @@ const Banner = () => {
               
               <div className="flex flex-wrap justify-center md:justify-start gap-4">
                 <a 
-                  href="https://ai-notes-summarizer-6.onrender.com/chatbot" 
+                  href="/chatbot" 
                   className="flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all hover:scale-105 shadow-lg hover:shadow-purple-500/30"
                 >
                   Try It Now <ArrowRight className="h-5 w-5 ml-2" />
                 </a>
                 <a 
-                  href="https://ai-notes-summarizer-6.onrender.com/features" 
+                  href="/features" 
                   className="flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all hover:scale-105 backdrop-blur-sm border border-white/20"
                 >
                   Explore Features
