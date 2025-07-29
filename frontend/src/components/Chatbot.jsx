@@ -107,7 +107,7 @@ const Chatbot = () => {
     setInput("");
 
     try {
-      const response = await axios.post('/api/notes/summarize', 
+      const response = await axios.post('https://ai-notes-summarizer-6.onrender.com/api/notes/summarize', 
         { 
           text: input,
           ...responseSettings
