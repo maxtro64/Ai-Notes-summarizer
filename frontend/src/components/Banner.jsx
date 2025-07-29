@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bot, ArrowRight, Sparkles, Zap } from 'lucide-react';
 
+
 const Banner = () => {
   const [typedText, setTypedText] = useState('');
   const phrases = [
@@ -34,8 +35,9 @@ const Banner = () => {
     return () => clearTimeout(timer);
   }, [typedText, currentPhraseIndex, isDeleting]);
 
-  return (
-    <div className="relative h-screen overflow-hidden">
+  return (<>
+      
+    <div className=" my-32  h-screen overflow-hidden fixed inset-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         {[...Array(20)].map((_, i) => (
@@ -173,7 +175,10 @@ const Banner = () => {
           animation: float-delay-2 12s ease-in-out infinite;
         }
       `}</style>
+     
     </div>
+     
+    </>
   );
 };
 

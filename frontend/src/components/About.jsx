@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Code, Github, Linkedin, Twitter, MousePointerClick, Terminal, Cpu, Server } from 'lucide-react';
+import { Code, Github, Linkedin, Terminal, Cpu, Server } from 'lucide-react';
 
 const About = () => {
   const [typedText, setTypedText] = useState('');
@@ -7,7 +7,6 @@ const About = () => {
   const words = ['Developer', 'Coder', 'Problem Solver', 'Tech Enthusiast'];
   const [isDeleting, setIsDeleting] = useState(false);
   
-  // Typewriter effect
   useEffect(() => {
     const typeSpeed = isDeleting ? 50 : 150;
     const currentWord = words[currentWordIndex];
@@ -31,9 +30,9 @@ const About = () => {
   }, [typedText, currentWordIndex, isDeleting]);
 
   return (
-    <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 h-[calc(100vh-68px)] overflow-hidden">
+    <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 min-h-screen pt-16 overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <div 
             key={i}
@@ -51,27 +50,27 @@ const About = () => {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 h-full flex items-center relative z-10 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full overflow-hidden">
           {/* Left column - Text content */}
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
+          <div className="text-center md:text-left overflow-hidden">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 overflow-hidden">
               Hi, I'm <span className="text-blue-400">Shivam Yadav</span>
             </h1>
             
-            <div className="h-12 mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-300">
+            <div className="h-12 mb-6 overflow-hidden">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-300 overflow-hidden">
                 {typedText}
                 <span className="ml-1 animate-pulse">|</span>
               </h2>
             </div>
             
-            <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+            <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 overflow-hidden">
               Passionate about building innovative solutions and solving complex problems through code.
               Currently mastering full-stack development and competitive programming.
             </p>
             
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8 overflow-hidden">
               <a 
                 href="https://github.com/maxtro64" 
                 target="_blank" 
@@ -103,10 +102,10 @@ const About = () => {
           </div>
 
           {/* Right column - Visual elements */}
-          <div className="relative hidden md:block">
-            <div className="relative w-full h-64 md:h-96">
+          <div className="relative hidden md:block overflow-hidden">
+            <div className="relative w-full h-64 md:h-96 overflow-hidden">
               {/* Floating cards */}
-              <div className="absolute top-0 left-1/4 w-48 h-48 bg-blue-900/30 rounded-xl backdrop-blur-sm border border-blue-500/30 transform rotate-6 animate-float">
+              <div className="absolute top-0 left-1/4 w-48 h-48 bg-blue-900/30 rounded-xl backdrop-blur-sm border border-blue-500/30 transform rotate-6 animate-float overflow-hidden">
                 <div className="p-4">
                   <Terminal className="h-8 w-8 text-blue-400 mb-2" />
                   <h3 className="text-white font-medium">150+ Problems</h3>
@@ -114,7 +113,7 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="absolute top-1/3 right-0 w-48 h-48 bg-purple-900/30 rounded-xl backdrop-blur-sm border border-purple-500/30 transform -rotate-6 animate-float-delay">
+              <div className="absolute top-1/3 right-0 w-48 h-48 bg-purple-900/30 rounded-xl backdrop-blur-sm border border-purple-500/30 transform -rotate-6 animate-float-delay overflow-hidden">
                 <div className="p-4">
                   <Server className="h-8 w-8 text-purple-400 mb-2" />
                   <h3 className="text-white font-medium">8 Projects</h3>
@@ -122,7 +121,7 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-green-900/30 rounded-xl backdrop-blur-sm border border-green-500/30 transform rotate-12 animate-float-delay-2">
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-green-900/30 rounded-xl backdrop-blur-sm border border-green-500/30 transform rotate-12 animate-float-delay-2 overflow-hidden">
                 <div className="p-4">
                   <Cpu className="h-8 w-8 text-green-400 mb-2" />
                   <h3 className="text-white font-medium">Full Stack</h3>
@@ -134,8 +133,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* CSS for animations */}
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes float {
           0%, 100% { transform: translateY(0) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(2deg); }
