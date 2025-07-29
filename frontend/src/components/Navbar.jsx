@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('https://ai-notes-summarizer-6.onrender.com/login');
+    navigate('/login');
     setIsProfileOpen(false);
   };
 
@@ -63,7 +63,7 @@ const Navbar = () => {
               {isProfileOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 border border-gray-700">
                   <Link
-                    to="https://ai-notes-summarizer-6.onrender.com/profile"
+                    to="/profile"
                     onClick={() => setIsProfileOpen(false)}
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
                   >
@@ -73,7 +73,7 @@ const Navbar = () => {
                     </div>
                   </Link>
                   <Link
-                    to="https://ai-notes-summarizer-6.onrender.com/chatbot"
+                    to="/chatbot"
                     onClick={() => setIsProfileOpen(false)}
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
                   >
@@ -97,13 +97,13 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center gap-2">
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/login"
+                to="/login"
                 className="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white rounded-md hover:bg-white/10"
               >
                 Login
               </Link>
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/register"
+                to="/register"
                 className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
               >
                 Get Started
@@ -128,7 +128,7 @@ const Navbar = () => {
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-gray-800 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
             <li>
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/"
+                to="/"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-white bg-blue-600/30 rounded md:bg-transparent md:text-white md:p-0"
                 aria-current="page"
@@ -138,7 +138,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/features"
+                to="/features"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
@@ -147,7 +147,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/about"
+                to="/about"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
@@ -156,7 +156,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/contact"
+                to="/contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
@@ -165,7 +165,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="https://ai-notes-summarizer-6.onrender.com/chatbot"
+                to="/chatbot"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
