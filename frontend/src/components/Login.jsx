@@ -28,7 +28,7 @@ const Login = () => {
       }
 
       if (result.success) {
-        navigate('https://ai-notes-summarizer-6.onrender.com/chatbot');
+        navigate('/chatbot');
       }
     } catch (error) {
       toast.error(error.message || 'Authentication failed');
