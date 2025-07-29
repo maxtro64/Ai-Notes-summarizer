@@ -9,7 +9,7 @@ export default defineConfig({
    server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://ai-notes-summarizer-6.onrender.com',
         changeOrigin: true,
         secure: false,
       }
