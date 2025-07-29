@@ -17,7 +17,7 @@ connect();
 
 // Middleware
 app.use(cors({
-  origin: 'https://ai-notes-summarizer-jstr.vercel.app/',
+  origin: 'https://ai-notes-summarizer-jstr.vercel.app',
   credentials: true
 }));
 
