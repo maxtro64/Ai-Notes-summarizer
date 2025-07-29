@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please add a password'],
-    minlength: [12, 'Password must be at least 12 characters'],
+    minlength: [6, 'Password must be at least 6 characters'],
     validate: {
       validator: function(v) {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/.test(v);

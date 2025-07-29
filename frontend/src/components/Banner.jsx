@@ -149,11 +149,8 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* CSS for animations */}
-      <style jsx global>{`
-        html, body {
-          overflow: hidden;
-        }
+      {/* Add this to your main CSS file instead */}
+      <style jsx="true">{`
         @keyframes float {
           0%, 100% { transform: translateY(0) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(2deg); }

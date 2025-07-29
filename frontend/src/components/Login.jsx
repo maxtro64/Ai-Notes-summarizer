@@ -21,14 +21,14 @@ const Login = () => {
     try {
       let result;
       if (isRegistering) {
-        result = await register(name, email, password);
+        result = await register({name, email, password});
       } else {
         
         result = await login({email, password});
       }
 
       if (result.success) {
-        navigate('/dashboard');
+        navigate('/chatbot');
       }
     } catch (error) {
       toast.error(error.message || 'Authentication failed');

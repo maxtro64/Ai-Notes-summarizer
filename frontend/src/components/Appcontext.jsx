@@ -71,28 +71,40 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   // Register user
-  const register = async (formData) => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      const res = await axios.post('/api/auth/register', formData);
-      
-      setToken(res.data.token);
-      setAuthToken(res.data.token);
-      await loadUser(); // Load user data after registration
-      
-      toast.success('Registration successful!');
-      return { success: true, data: res.data };
-    } catch (err) {
-      const errorMsg = err.response?.data?.message || 'Registration failed';
-      setError(errorMsg);
-      toast.error(errorMsg);
-      return { success: false, error: errorMsg };
-    } finally {
-      setLoading(false);
+const register = async (formData) => {
+  try {
+    setLoading(true);
+    setError(null);
+    
+    const res = await axios.post('/api/auth/register', formData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    if (!res.data?.token) {
+      throw new Error('No token received from server');
     }
-  };
+    
+    setToken(res.data.token);
+    setAuthToken(res.data.token);
+    await loadUser();
+    
+    toast.success('Registration successful!');
+    return { success: true, data: res.data };
+  } catch (err) {
+    console.error('Registration error:', err);
+    const errorMsg = err.response?.data?.message || 
+                    err.response?.data?.error || 
+                    err.message || 
+                    'Registration failed';
+    setError(errorMsg);
+    toast.error(errorMsg);
+    return { success: false, error: errorMsg };
+  } finally {
+    setLoading(false);
+  }
+};
 
   // Login user
   const login = async (credentials) => {
