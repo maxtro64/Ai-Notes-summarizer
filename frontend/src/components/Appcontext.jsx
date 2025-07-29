@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       
       setAuthToken(token);
       
-     const res = await axios.get('/api/auth/me', {
+     const res = await axios.get('https://ai-notes-summarizer-6.onrender.com/api/auth/me', {
   headers: {
     Authorization: `Bearer ${token}`,
   },
@@ -76,7 +76,7 @@ const register = async (formData) => {
     setLoading(true);
     setError(null);
     
-    const res = await axios.post('/api/auth/register', formData, {
+    const res = await axios.post('https://ai-notes-summarizer-6.onrender.com/api/auth/register', formData, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -112,7 +112,7 @@ const register = async (formData) => {
       setLoading(true);
       setError(null);
       
-      const res = await axios.post('/api/auth/login', credentials);
+      const res = await axios.post('https://ai-notes-summarizer-6.onrender.com/api/auth/login', credentials);
       
       setToken(res.data.token);
       setAuthToken(res.data.token);
