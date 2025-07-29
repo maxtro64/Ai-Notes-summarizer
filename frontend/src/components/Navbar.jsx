@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('https://ai-notes-summarizer-6.onrender.com/login');
     setIsProfileOpen(false);
   };
 
@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav className="bg-gray-900/80 border-b border-gray-700/50 backdrop-blur-md fixed w-full z-50 h-16">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 h-full">
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Link to="/" className="flex items-center">
+          <Link to="https://ai-notes-summarizer-6.onrender.com/" className="flex items-center">
             <img src={Logo} className="h-8" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white ml-2">
               NeuroNotes
@@ -63,7 +63,7 @@ const Navbar = () => {
               {isProfileOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 border border-gray-700">
                   <Link
-                    to="/profile"
+                    to="https://ai-notes-summarizer-6.onrender.com/profile"
                     onClick={() => setIsProfileOpen(false)}
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
                   >
@@ -73,7 +73,7 @@ const Navbar = () => {
                     </div>
                   </Link>
                   <Link
-                    to="/chatbot"
+                    to="https://ai-notes-summarizer-6.onrender.com/chatbot"
                     onClick={() => setIsProfileOpen(false)}
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
                   >
@@ -97,13 +97,13 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center gap-2">
               <Link
-                to="/login"
+                to="https://ai-notes-summarizer-6.onrender.com/login"
                 className="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white rounded-md hover:bg-white/10"
               >
                 Login
               </Link>
               <Link
-                to="/register"
+                to="https://ai-notes-summarizer-6.onrender.com/register"
                 className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
               >
                 Get Started
@@ -128,7 +128,7 @@ const Navbar = () => {
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-gray-800 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
             <li>
               <Link
-                to="/"
+                to="https://ai-notes-summarizer-6.onrender.com/"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-white bg-blue-600/30 rounded md:bg-transparent md:text-white md:p-0"
                 aria-current="page"
@@ -138,7 +138,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/features"
+                to="https://ai-notes-summarizer-6.onrender.com/features"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
@@ -147,7 +147,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/about"
+                to="https://ai-notes-summarizer-6.onrender.com/about"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
@@ -156,7 +156,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/contact"
+                to="https://ai-notes-summarizer-6.onrender.com/contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
@@ -165,7 +165,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/chatbot"
+                to="https://ai-notes-summarizer-6.onrender.com/chatbot"
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 px-3 text-gray-300 rounded hover:bg-white/10 md:hover:bg-transparent md:hover:text-white md:p-0"
               >
