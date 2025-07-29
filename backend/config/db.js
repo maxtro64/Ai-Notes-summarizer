@@ -1,29 +1,46 @@
-import mongoose from "mongoose";
+import dotenv from 'dotenv';
+dotenv.config();
+import mongoose from 'mongoose';
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/chat-bot", {
-      serverSelectionTimeoutMS: 5000,
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 30000, // 30 seconds timeout
+      socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+      tls: true,
+      tlsAllowInvalidCertificates: true, // Needed for Render's MongoDB
       retryWrites: true,
-      retryReads: true,
-      maxPoolSize: 10,
-      socketTimeoutMS: 45000
+      w: 'majority'
     });
-    console.log("Connected To Database");
+
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    
+    // Connection event listeners
+    mongoose.connection.on('connected', () => {
+      console.log('Mongoose connected to DB');
+    });
+
+    mongoose.connection.on('error', (err) => {
+      console.error('Mongoose connection error:', err);
+    });
+
+    mongoose.connection.on('disconnected', () => {
+      console.log('Mongoose disconnected');
+    });
+
+    // Close connection on app termination
+    process.on('SIGINT', async () => {
+      await mongoose.connection.close();
+      console.log('Mongoose connection closed due to app termination');
+      process.exit(0);
+    });
+
   } catch (error) {
-    console.error("Database connection failed:", error.message);
-    // Retry connection after delay
-    setTimeout(connect, 5000);
+    console.error(`MongoDB Connection Error: ${error.message}`);
+    process.exit(1);
   }
 };
-
-mongoose.connection.on('error', err => {
-  console.error('MongoDB connection error:', err);
-});
-
-mongoose.connection.on('disconnected', () => {
-  console.log('MongoDB disconnected. Reconnecting...');
-  connect();
-});
 
 export default connect;

@@ -111,7 +111,7 @@ const register = async (formData) => {
     try {
       setLoading(true);
       setError(null);
-      console.log(credentials)
+      
       const res = await axios.post('/api/auth/login', credentials);
       
       setToken(res.data.token);
