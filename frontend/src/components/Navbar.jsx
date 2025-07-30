@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav className="bg-gray-900/80 border-b border-gray-700/50 backdrop-blur-md fixed w-full z-50 h-16">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 h-full">
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Link to="https://ai-notes-summarizer-6.onrender.com/" className="flex items-center">
+          <Link to="https://ai-notes-summarizer-6.onrender.com" className="flex items-center">
             <img src={Logo} className="h-8" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white ml-2">
               NeuroNotes
